@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import GameList from './GameList'
 
 class App extends React.Component
 {
     render()
     {
         return (
-            <p>Hello</p>
+            <GameList 
+                items={5}
+            />
         );
     }
 }
