@@ -1,2 +1,2 @@
 # price-comparison
-Price comparison website
+Price comparison website built using Django and React!
