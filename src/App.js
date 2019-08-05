@@ -6,9 +6,12 @@ class App extends React.Component
 {
     render()
     {
+        const data = JSON.parse('[{"name" : "God of war", "store" : "SEEX", "price" : "0.99"},{"name" : "Eternal Quest", "store" : "unknown", "price" : "99.99"},{"name" : "CSGO", "store" : "steam", "price" : "6.99"}]');
+
         return (
             <GameList 
-                items={5}
+                items={data.length}
+                data={data}
             />
         );
     }
