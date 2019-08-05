@@ -11,7 +11,7 @@ class GameList extends React.Component
         }
     }
 
-    render()
+    createItemList()
     {
         let itemList = [];
 
@@ -19,10 +19,16 @@ class GameList extends React.Component
         {
             itemList.push(<li>item {i+1}</li>);
         }
+        return itemList;
+    }
+
+    render()
+    {
+    
 
         return (
             <ul>
-                {itemList}
+                {this.createItemList()}
             </ul>
         );
     }
