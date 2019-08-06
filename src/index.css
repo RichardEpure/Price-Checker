@@ -11,3 +11,47 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+.gamelist-container ul
+{
+  list-style: none;
+  color: #f1f1f1;
+}
+.gamelist-item, .gamelist-item-expanded
+{
+  padding: 15px;
+  background-color: rgb(100, 100, 100);
+  transition: .5s;
+}
+.gamelist-item-expanded
+{
+  padding-bottom: 200px;
+}
+.gamelist-item h5, .gamelist-item h6
+{
+  padding: 0;
+  margin: 0 0 4px 0;
+}
+.gamelist-item button
+{
+  border: none;
+  padding: none;
+  margin: none;
+  background-color: inherit;
+  color: inherit;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+.gamelist-item:hover
+{
+  background-color: rgb(150, 150, 150);
+}
+.gamelist-image
+{
+  height: 15vh;
+  width: auto;
+  margin: 10px;
+}
