@@ -12,6 +12,22 @@ class GameList extends React.Component
         }
     }
 
+    collapsedItem(key)
+    {
+        return(
+            <li key={key} className="gamelist-item">
+                <button onClick={() => this.expandItem(key)}>
+                    <div className="row">
+                        <div className="col-auto">
+                            <h5>{this.props.data[key].name}</h5>
+                            <h6>Prices: {this.props.data[key].price}</h6>
+                        </div>
+                    </div>
+                </button>
+            </li>
+        );
+    }
+
     expandItem(key)
     {
         let newItemList = this.state.itemList.slice();
@@ -20,33 +36,21 @@ class GameList extends React.Component
         {
             let eKey = this.state.expandedItem;
 
-            newItemList[eKey] =
-                <li key={eKey} className="gamelist-item">
-                    <button onClick={() => this.expandItem(eKey)}>
-                        <div className="row">
-                            <div className="col-auto">
-                                    <img src="" alt="game" className="gamelist-image"></img>
-                            </div>
-                            <div className="col-auto">
-                                    <h5>{this.props.data[eKey].name}</h5>
-                                    <h6>{this.props.data[eKey].store}</h6>
-                                    <h6>{this.props.data[eKey].price}</h6>
-                            </div>
-                        </div>
-                    </button>
-                </li>;
+            newItemList[eKey] = this.collapsedItem(eKey);
         }
 
         newItemList[key] =
             <li key={key} className="gamelist-item-expanded">
                 <div className="row">
-                    <div className="col-auto">
-                            <img src="" alt="game" className="gamelist-image"></img>
-                    </div>
-                    <div className="col-auto">
-                            <h5>{this.props.data[key].name}</h5>
-                            <h6>{this.props.data[key].store}</h6>
-                            <h6>{this.props.data[key].price}</h6>
+                    <div className="col-12">
+                    <img src={"images/gow.jpg"} alt="game" className="gamelist-image"></img>
+                        <h5>{this.props.data[key].name}</h5>
+                        <a href="#"><h6>{this.props.data[key].store}: {this.props.data[key].price}</h6></a>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Vestibulum quis est lacinia, lacinia urna quis, feugiat eros. Sed dictum vulputate sapien, vitae tincidunt sapien tempus eu. 
+                            Suspendisse vestibulum rhoncus velit eget fermentum. Nam varius, lectus vel bibendum convallis, justo arcu hendrerit nisi, vel tempus tortor est at tortor.
+                        </p>
                     </div>
                 </div>
             </li>;
@@ -62,21 +66,7 @@ class GameList extends React.Component
         let newItemList = this.state.itemList.slice();
         for(let i=0; i<this.props.items; i++)
         {
-            newItemList[i] =
-                <li key={i} className="gamelist-item">
-                    <button onClick={() => this.expandItem(i)}>
-                        <div className="row">
-                            <div className="col-auto">
-                                    <img src="" alt="game" className="gamelist-image"></img>
-                            </div>
-                            <div className="col-auto">
-                                    <h5>{this.props.data[i].name}</h5>
-                                    <h6>{this.props.data[i].store}</h6>
-                                    <h6>{this.props.data[i].price}</h6>
-                            </div>
-                        </div>
-                    </button>
-                </li>;
+            newItemList[i] = this.collapsedItem(i);
         }
 
         this.setState({
