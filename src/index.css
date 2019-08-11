@@ -14,16 +14,28 @@ code {
 }
 
 
+/* ======================== GAMELIST ======================== */
 .gamelist-container ul
 {
   list-style: none;
   color: #f1f1f1;
   margin: 0;
   padding: 0;
+  border: solid 10px rgb(35, 35, 35);
+}
+.gamelist-container li
+{
+  margin: 0;
+  padding: 0;
+}
+.gamelist-text
+{
+  padding: 10px;
 }
 .gamelist-item, .gamelist-item-expanded
 {
   padding: 15px;
+  border: solid 2px rgb(35, 35, 35);
   background-color: rgb(50, 50, 50);
   height: 100px;
   overflow: hidden;
@@ -32,7 +44,6 @@ code {
 .gamelist-item-expanded
 {
   height: 500px;
-  
 }
 .gamelist-item h5, .gamelist-item h6
 {
@@ -58,9 +69,9 @@ code {
 }
 .gamelist-item button
 {
-  border: none;
-  padding: none;
-  margin: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
   background-color: inherit;
   color: inherit;
   text-align: inherit;
