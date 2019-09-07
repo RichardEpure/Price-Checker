@@ -63,10 +63,21 @@ class GameList extends React.Component
         {
             let eKey = this.state.expandedItem;
 
-            newItemList[eKey] = <GamelistItem keyValue={eKey} onClick={() => this.expandItem(eKey)} data={this.props.data} expanded={false} />
+            newItemList[eKey] = <GamelistItem 
+                                    key={eKey}
+                                    keyValue={eKey} 
+                                    onClick={() => this.expandItem(eKey)} 
+                                    data={this.props.data} 
+                                    expanded={false} 
+                                    />
         }
 
-        newItemList[key] = <GamelistItem keyValue={key} data={this.props.data} expanded={true} />
+        newItemList[key] = <GamelistItem 
+                                key={key}
+                                keyValue={key} 
+                                data={this.props.data} 
+                                expanded={true} 
+                                />
 
         this.setState({
             itemList: newItemList,
@@ -79,8 +90,13 @@ class GameList extends React.Component
         let newItemList = this.state.itemList.slice();
         for(let i=0; i<this.props.items; i++)
         {
-            newItemList[i] = 
-                    <GamelistItem keyValue={i} onClick={() => this.expandItem(i)} data={this.props.data} expanded={false} />
+            newItemList[i] = <GamelistItem 
+                                key={i}
+                                keyValue={i} 
+                                onClick={() => this.expandItem(i)} 
+                                data={this.props.data} 
+                                expanded={false} 
+                                />
         }
 
         this.setState({

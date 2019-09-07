@@ -180,10 +180,9 @@ code {
 }
 .gamelist-item, .gamelist-item-expanded
 {
-  padding: 15px;
   border: solid 2px rgb(35, 35, 35);
   background-color: rgb(50, 50, 50);
-  height: 100px;
+  height: 65px;
   overflow: hidden;
   transition: height 0.5s;
 }
@@ -194,7 +193,7 @@ code {
 .gamelist-item h5, .gamelist-item h6
 {
   padding: 0;
-  margin: 0 0 4px 0;
+  margin: 0;
 }
 .gamelist-item h5, .gamelist-item-expanded h5
 {
