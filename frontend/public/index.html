@@ -14,26 +14,25 @@
     <title>React App</title>
   </head>
   <body>
-    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav> -->
-
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div class="container text-center">
+
+      <form action="/search/" method="GET">
+
+        <div class="row justify-content-center">
+          <div class="col-auto">
+            <input type="text" id="search-input" name="q" class="form-control" placeholder="Search" value="">
+          </div>
+          <div class="col-auto text-left">
+            <input type="submit" value="submit" class="btn btn-primary">
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+
     <div id="root"></div>
   </body>
 </html>

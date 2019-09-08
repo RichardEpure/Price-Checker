@@ -5,7 +5,7 @@ class App extends React.Component
 {
     render()
     {
-        const data = 
+        var data = 
         [
             {
                 "name": "God of war",
