@@ -25,7 +25,7 @@ def search(request):
 
 
 @csrf_exempt
-def catchall_dev(request, extraContent="", upstream='http://localhost:3000'):
+def catchall_dev(request, upstream='http://localhost:3000'):
     upstream_url = upstream + request.path
     method = request.META['REQUEST_METHOD'].lower()
     response = getattr(requests, method)(upstream_url, stream=True)
@@ -39,7 +39,7 @@ def catchall_dev(request, extraContent="", upstream='http://localhost:3000'):
         )
     elif content_type == 'text/html; charset=UTF-8':
         return http.HttpResponse(
-            content = engines['django'].from_string(extraContent + response.text).render(),
+            content = engines['django'].from_string(response.text).render(),
             status = response.status_code,
             reason = response.reason,
         )
