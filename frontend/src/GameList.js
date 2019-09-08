@@ -51,7 +51,8 @@ class GameList extends React.Component
         super(props);
         this.state = {
             itemList: Array(this.props.items),
-            expandedItem: undefined
+            expandedItem: undefined,
+            update: false
         }
     }
 
@@ -90,12 +91,17 @@ class GameList extends React.Component
         let newItemList = this.state.itemList.slice();
         for(let i=0; i<this.props.items; i++)
         {
+            let expand = false;
+            if(i === this.state.expandedItem)
+            {
+                expand = true;
+            }
             newItemList[i] = <GamelistItem 
                                 key={i}
                                 keyValue={i} 
                                 onClick={() => this.expandItem(i)} 
                                 data={this.props.data} 
-                                expanded={false} 
+                                expanded={expand} 
                                 />
         }
 
@@ -106,7 +112,20 @@ class GameList extends React.Component
 
     componentDidUpdate()
     {
-
+        if(this.props.refresh)
+        {
+            this.setState({
+                itemList: [],
+                update: true
+            });
+        }
+        if(this.state.update)
+        {
+            this.setState({
+                update: false
+            })
+            this.createList();
+        }
     }
 
     componentDidMount()
