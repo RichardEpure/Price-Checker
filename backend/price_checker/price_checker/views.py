@@ -6,28 +6,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView
 
 
-# def search(request):
-#     search_value = request.GET.get('search', '')
-
-#     data = '''
-#         [
-#             {
-#                 "name": "'''+search_value+'''",
-#                 "store": "unspecified",
-#                 "price": "0.00"
-#             }
-#         ]'''
-
-#     extraContent = """
-#     <script type='text/JavaScript'> 
-#         var django_data = """+data+""";
-#     </script>
-#     """
-#     if(settings.DEBUG):
-#         return catchall_dev(request, extraContent)
-#     else:
-#         return TemplateView.as_view(template_name='index.html')
-
 def search(request):
     search_value = request.GET.get('search', '')
     data = [
