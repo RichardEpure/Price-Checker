@@ -7,11 +7,11 @@ function GamelistItem(props)
     if(props.expanded)
     {
         return (
-            <li className="gamelist-item-expanded">
+            <li className="item-expanded">
                 <div className="row">
                     <div className="col-12">
-                        <div className="gamelist-text">
-                            <img src={img} alt="game" className="gamelist-image"></img>
+                        <div className="section">
+                            <img src={img} alt="game" className="image"></img>
                             <h5>{props.data[props.keyValue].name}</h5>
                             <a href="#"><h6>{props.data[props.keyValue].store}: {props.data[props.keyValue].price}</h6></a>
                             <p>
@@ -28,11 +28,11 @@ function GamelistItem(props)
     else
     {
         return (
-            <li className="gamelist-item">
+            <li className="item">
                 <button onClick={props.onClick}>
                     <div className="row">
                         <div className="col-auto">
-                            <div className="gamelist-text">
+                            <div className="section">
                                 <h5>{props.data[props.keyValue].name}</h5>
                                 <h6>Prices: {props.data[props.keyValue].price}</h6>
                             </div>
