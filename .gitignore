@@ -14,8 +14,8 @@ frontend/build/*
 backend/price_checker/static/*
 !.gitkeep
 
-.css
-.map
+*.css
+*.map
 
 # misc
 .DS_Store
